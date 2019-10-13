@@ -1,5 +1,5 @@
-name: "Testcafe"
-description: "Runs testcafe inside container that has all popular browsers pre-installed"
+name: "testcafe-action"
+description: "Github actions that executes testcafe inside container that has all popular browsers pre-installed"
 inputs:
   args:
     description: "Arguments that will be passed to testcafe CLI"
