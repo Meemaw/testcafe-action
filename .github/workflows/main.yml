@@ -1,0 +1,21 @@
+name: Example workflow for Testcafe action
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["12", "10", "8"]
+
+    name: Node ${{ matrix.node }} example
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Run testcafe tests
+        uses: ./
+        with:
+          args: "chrome:headless tests"
